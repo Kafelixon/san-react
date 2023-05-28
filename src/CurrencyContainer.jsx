@@ -18,13 +18,13 @@ function CurrencyContainer() {
       const currencyData = await Promise.all(
         relevantCurrencies.map(async (currency) => {
           const response = await axios.get(
-            `http://api.nbp.pl/api/exchangerates/rates/a/${currency}/${startDate}/${endDate}/?format=json`
+            `https://api.exchangerate.host/timeseries?start_date=${startDate}&end_date=${endDate}&base=PLN&symbols=${currency}`
           );
           const rates = response.data.rates;
-          const currentRate = rates[rates.length - 1].mid;
-          const history = rates.map((rate) => ({
-            name: rate.effectiveDate,
-            rate: rate.mid,
+          const currentRate = 1 / rates[endDate][currency];
+          const history = Object.entries(rates).map(([date, rate]) => ({
+            name: date,
+            rate: 1 / rate[currency],
           }));
           return {
             currency,
