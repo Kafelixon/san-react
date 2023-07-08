@@ -9,9 +9,9 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Piotr Szelenberger-Kafel</h1>
-      <h2>nr albumu: 144941</h2>
       <h1>Currency Converter</h1>
+      <h2>Piotr Szelenberger-Kafel</h2>
+      <h4>nr albumu: 144941</h4>
       <CurrencyContainer />
     </div>
   );

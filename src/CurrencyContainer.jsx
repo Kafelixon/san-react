@@ -5,7 +5,7 @@ import CurrencyCard from "./CurrencyCard";
 function CurrencyContainer() {
   const [currencies, setCurrencies] = useState([]);
   const [loading, setLoading] = useState(true);
-  const relevantCurrencies = ["USD", "EUR", "JPY"];
+  const relevantCurrencies = ["USD", "EUR", "JPY","GBP","AUD","CAD","CHF","CNY","SEK","NZD"];
 
   useEffect(() => {
     const fetchCurrencies = async () => {

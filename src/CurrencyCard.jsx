@@ -9,8 +9,7 @@ function CurrencyCard({ currency, rate, history }) {
 
   return (
     <div className="card">
-      <h2>{currency}</h2>
-      <h3>{rate.toFixed(2)}</h3>
+      <h2>1 {currency} = {rate.toFixed(2)} PLN</h2>
       <h4 style={{ color: arrowColor }}>
         {rateChangePercentage > 0 ? "↑" : "↓"} {Math.abs(rateChangePercentage)}%
       </h4>
